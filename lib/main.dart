@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Chat App',
-      initialRoute: 'login', //loading es el q se sabe si esta autentificado
+      initialRoute: 'chat', //loading es el q se sabe si esta autentificado
       routes: appRoutes,
 
     );
