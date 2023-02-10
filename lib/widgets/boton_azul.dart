@@ -1,23 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../services/auth_service.dart';
 
 class BotonAzul extends StatelessWidget {
   
   final String etiqueta;
-  final Function onPressed;
+  Function onPressed ;
 
-  const BotonAzul(
+    BotonAzul(
     {super.key, 
     required this.etiqueta,
-    required this.onPressed, 
+    required this.onPressed,
   
     });
 
+  
 
   @override
   Widget build(BuildContext context) {
+    final authService = Provider.of<AuthService>(context);
+
     return   ElevatedButton(
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
+            backgroundColor: !authService.autenticando ? Colors.blue : Colors.grey,
             elevation: 2,
             shape: StadiumBorder(),
 
